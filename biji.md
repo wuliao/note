@@ -38,28 +38,28 @@
 -------------------------------------------------------------------------------
 ##   make command easy
       example: " markdown biji.md > biji.html"  change mmm 
+     ' mark.sh '   //it is command script under bash 
      $vim mark.sh  
-     vim|  markdown biji.md > biji.html                                         |
-        |  firefox biji.html&                                                   |
-        |-----------------------------------------------------------------------|                                                      
-        |  markdown /home/wuliao/note/biji.md > /home/wuliao/note/biji.html     |
-        |  firefox /home/wuliao/note/biji.html&                                 |                     
-        |---------------------------------------------------------------------- |
-###      wirte absolute path can make command again another directory also effect
-        |                                                                       |    
-        |  markdown /$HOME/note/biji.md > /$HOME/note/biji.html                 |
-        |  firefox /$HOME/note/biji.html&                                       |   
-        |  (%s/\/home\/wuliao/$HOME/g) ;In the Vim replacement command          |   
+     vim|markdown biji.md > biji.html     |
+        |firefox biji.html&               |
+      ----------------------------------------------------------------------------  
+        | markdown /home/wuliao/note/biji.md > /home/wuliao/note/biji.html
+        |  firefox /home/wuliao/note/biji.html&     
+       -------------------------------------------
+###  wirte absolute path can make command again another directory also effect
+       |  markdown /$HOME/note/biji.md > /$HOME/note/biji.html           |
+       | firefox /$HOME/note/biji.html&                                  |   
+       | (%s/\/home\/wuliao/$HOME/g) ;In the Vim replacement command     |   
     $chmod +x biji.sh
     $mv mark.sh /bin/mmm
-    $
+    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Git
 
 ## collaction method git script
-###   file 'gitconefig' is git script
-       |$ mkdir gitconfib                        |
-       |$ vim gitconfig                          |
+###   file '.gitconefig' is git script .how to configoration git script file
+       |$ touch .gitconfib                        |
+       |$ vim .gitconfig                          |
        |  [core]                                 |
        |         neditor = vim                   |
        |  [alias]                                |
@@ -94,7 +94,57 @@
 
 -------------------------------------------------------------------------------
 ##git command
-###
+    $git reset --hard HEAD^      //delete the git version,but not recover 
+    $git checkout commitnumber   //recovery of the previous version, but delete can recover
+    $git branch     //see current master
+    $git checkout master     //recover delete versoon 
+-----------------------------------------------------------------------
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # VIM
+
+  
+     $vimdiff filename filename     //compare two the content of the document
+------------------------------------------------------------------------------------------------------------------------ 
+## collaction method makefile  
+    $vim makefile
+      vim / all:                                 /
+          /      gcc hello.c ...........         /
+          /      ./a.out   ...........           /  
+          / clean:                               /    
+          /      a.out   .........               /  
+  
+## collaction method vim script 
+      $vim .vimrc                        
+        vim |runtime vimrc  ( connect to vimrc )   |
+            vimrc /   
+                  /  map ,cc :botrig ht cope<cr>   /
+                  /  map ,cn :cn<cr>               /     **********more .vimrc content in my github "vim" director********                                     
+                  /  map ,cp :cp<cr>               /
+
+--------------------------------------------------------------------------------------------------------------------
+## vim's command on nosert 
+        :w                  //save
+        :make               //create 
+        :cwindow            //debug        |   :cn    //skip to next  error
+        :cclose             //close debug window
+      -------------------------------------------------------------------------
+        set nu     //in vim show line number 
+        :set +s =4    //set tab key is four blank
+        :DOX    //code annotation
+        :NeRDTreeTOGGle     //  insted of <,n>  .check list of file
+        :cats      //
+        :diffseave  // cached file with the disk of source file contrast
+------------------------------------------------------------------------------------------------------------------
+## vim shortcuts and orders
+###     vim .c  file        
+       ctrl +t    ;line indented
+       ctrl +d    ;line indented
+       shift +v &'<' or '>'  ; indented
+       shift +v & zf%   ;flod the selected content
+       :zf%    ;flod the content by" { }"selected
+       :zx     ;opean flod contenat
+       :zc     ;close 
+       :shfit +j  ;mergin two line
 
