@@ -2,41 +2,41 @@
 # LINUX Ubuntu COMMAND 
 
 ## commonly  used command in bash under 
-    `sudo apt-get install package`
-    `sudo apt-get update`
-    `history > filename ` //save history command in cache
-    `echo $PATH  `      //Deposit command of the path
-    `which commane  `   // look up command path  " $which ls "
-    `chmod +x file  `    //change files permessions
-    `chmod 755 file `   //ditto
-    `adduser newname`   //add new other user
-    `su username `      //change the current user
-    `file dirname `     //check if the thing is a file or a director
-    `file filename `    //.........................................
-    `rm -rf filename `  //delate anything
-    `ls -l -a `         // show the current path content
-    `touch filename`    //ceate a new file 
-    `mkdir dirname`     //create a new directory
-    `rmdir dirname`     // delate a empty directory
-    `cd dirname `       //switching the current directory '$cd ~':switching home
-    `pwd       `        // show current path
-    `cat file `         // see file content
-    `more file `          // see file content ,press any key to next screen when full screen
-    `less file `           // ditto  but it see less
+    sudo apt-get install package
+    sudo apt-get update
+    history > filename  //save history command in cache
+    echo $PATH        //Deposit command of the path
+    which commane     // look up command path  " $which ls "
+    chmod +x file      //change files permessions
+    chmod 755 file    //ditto
+    adduser newname   //add new other user
+    su username       //change the current user
+    file dirname      //check if the thing is a file or a director
+    file filename     //.........................................
+    rm -rf filename   //delate anything
+    ls -l -a          // show the current path content
+    touch filename    //ceate a new file 
+    mkdir dirname     //create a new directory
+    rmdir dirname     // delate a empty directory
+    cd dirname        //switching the current directory '$cd ~':switching home
+    pwd               // show current path
+    cat file          // see file content
+    more file           // see file content ,press any key to next screen when full screen
+    less file            // ditto  but it see less
                          //press ctrl +c or 'q'  exit it
-    `head file `           //show file content ten rows on the default "$head -5 fiel" show file fount five rows
-    `tail file`            // ditto    but it is behand 
-    `cp     `              // copy conent
-    `mv    `               //move file and chang filename
-    `find .-name 'file*'`  //find this file on the current director path
-    `which command   `     //find this command absolute path 
-    `greap [option] file`  //the specific contents specifid file search"greap'printf'/user/include -R
-    `cw -c -w -l    `            //  statistical file bytes/words/lines number
-    `vimdiff file file `        //compare two file
-    `sudo !! `             // example input: "$apt-get install ggg" ,(it absence 'sudo')   then input '$sudo !!"  
+    head file            //show file content ten rows on the default "$head -5 fiel" show file fount five rows
+    tail file            // ditto    but it is behand 
+    cp                   // copy conent
+    mv                   //move file and chang filename
+    find .-name 'file*'  //find this file on the current director path
+    which command        //find this command absolute path 
+    greap [option] file  //the specific contents specifid file search"greap'printf'/user/include -R
+    cw -c -w -l                //  statistical file bytes/words/lines number
+    vimdiff file file         //compare two file
+    sudo !!              // example input: "$apt-get install ggg" ,(it absence 'sudo')   then input "$sudo !!"  
                             '$sudo !!' = $sudo apt-get ingstall ggg
-    `^ggg^tig^`            // 'tig' replecment 'ggg'     
-    `ctrl +r `             //find history command 
+    ^ggg^tig^            // 'tig' replecment 'ggg'     
+    ctrl +r              //find history command 
     
 
 -------------------------------------------------------------------------------
