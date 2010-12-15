@@ -28,18 +28,30 @@
     tail file            // ditto    but it is behand 
     cp                   // copy conent
     mv                   //move file and chang filename
-    find .-name 'file*'  //find this file on the current director path
+    find . -name 'file*'  //find this file on the current director path
     which command        //find this command absolute path 
-    greap [option] file  //the specific contents specifid file search"greap'printf'/user/include -R
-    cw -c -w -l                //  statistical file bytes/words/lines number
-    vimdiff file file         //compare two file
+    grep [option] file  //the specific contents specifid file search"grep'printf'/user/include -R
+    cw -c -w -l             //  statistical file bytes/words/lines number
+    vimdiff file file      //compare two file
     sudo !!              // example input: "$apt-get install ggg" ,(it absence 'sudo')   then input "$sudo !!"  
                             '$sudo !!' = $sudo apt-get ingstall ggg
-    ^ggg^tig^            // 'tig' replecment 'ggg'     
-    ctrl +r              //find history command 
+    ^ggg^tig^           // 'tig' replecment 'ggg'     
+    ps                 //check process
+    ps a              //check terminal process including other process
+    ps u             //show process owner
+    ps x            //showed no ctronal terminal process
+    ps aux |grep "() "        // is a u x combining 
+    jobs          //display shell are runing what process
+    kill (PID)    //kill receptionist process
+    kill -9 (PID)  // force kill    ditto "$kill -SIGKILL (PID)"
+    fg (PID)              //the backstage process or hung up process into receptionist process
+    bg (PID)                  //make hung up process into backstage execution    '$fg %2895'
+    $tar zcf dir1.tar.gz dir1   // put dir1 pack dir1.tar.gz
+    $tar tvf dir1.tar.gz            // see package content
+    $tar zxf dir1.tar.gz       // unpack
+    ctrl +r           //find history command 
     
-
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 ##   make command easy
       example: " markdown biji.md > biji.html"  change mmm 
      ' mark.sh '   //it is command script under bash 
@@ -95,20 +107,41 @@
       | $git commit -m 'first commit'                         |  
       | $git remote add origin git@github.com:wuliao/note.git |
       | $git push origin master                               |
-
+###  get the new changes
+     $cd dirname
+     $git pull
 -------------------------------------------------------------------------------
 ## git command
     $git reset --hard HEAD^      //delete the git version,but not recover 
     $git checkout commitnumber   //recovery of the previous version, but delete can recover
     $git branch     //see current master
     $git checkout master     //recover delete versoon 
+
+----------------------------------------------------------------------------------------
+## Tig
+   
+      $sudo apt-get install tig
+      $cd dirname   
+      $git init
+      $patch filename
+      $git add filename
+      $git commit -a -m "first "
+      $tig       ("d" in   /  "q"  quit)
 -----------------------------------------------------------------------
 
-# markdown
-## 
+## markdown
+
+### how to use marksown
+   $sudo apt-get install markdown
+   $vim file.md
+   $markdown file.md > file1.html
+   $firefox file1.html&   ("&"  exeuction in backstage)
+
 -------------------------------------------------------------------------------------------------------------------------
 ##diff and patch 
-
+     $diff -u a b>ab.diff 
+     $rm b
+     $patch < ab.diff
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # VIM
 
@@ -140,7 +173,7 @@
       -------------------------------------------------------------------------
         set nu              //in vim show line number 
         :set +s =4          //set tab key is four blank
-        :DOX                //code annotation
+        :DOX                //code annotation  "coding style"
         :NeRDTreeTOGGle     //  insted of <,n>  .check list of file
         :cats               //
         :diffseave          // cached file with the disk of source file contrast
@@ -150,12 +183,15 @@
        ctrl +t    ;line indented
        ctrl +d    ;line indented
        shift +v &'<' or '>'  ; indented
+       xp         //to exchange two char
+       rc         //change the char in example "mn' change "mj"cursor in 'n' on  ,then press key `rj`
        %             //matching '{' (nosert  press % key)
        shift +v & zf%   ;flod the selected content
        :zf%    ;flod the content by" { }"selected
        :zx     ;opean flod contenat
        :zc     ;close 
        :shfit +j  ;mergin two line
+
 -----------------------------------------------------------------------------------------------------------------------------  
 ##   Gcc
 ###  
