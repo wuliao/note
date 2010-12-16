@@ -48,6 +48,8 @@
       user２name查找在系统中属于user1name或着属于user2name的文件
       find / -user user1name -and
       -user2name在系统中查找既属于user1name又属于user2name用户的文件
+  more detailed find command <http://ycyk168.javaeye.com/blog/514575>
+
     which command        //find this command absolute path 
     grep [option] file  //the specific contents specifid file search"grep'printf'/user/include -R
     cw -c -w -l             //  statistical file bytes/words/lines number
