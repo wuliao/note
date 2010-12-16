@@ -26,9 +26,28 @@
                          //press ctrl +c or 'q'  exit it
     head file            //show file content ten rows on the default "$head -5 fiel" show file fount five rows
     tail file            // ditto    but it is behand 
-    cp                   // copy conent
+    cp                   // copy conment
     mv                   //move file and chang filename
-    find . -name 'file*'  //find this file on the current director path
+    find . -name 's*'  //find this file on the current director path
+                       // <s*>  is begin by 's' \ <*s> is end by 's'  \ <*s*> mean contains 's'
+      find / -name filename 再根目录里面搜索文件名为filename的文件
+      find /etc -name *s*在目录里面搜索带有s的文件
+      find /etc -name *S 在目录里面搜索以s结尾的文件
+      find /etc -name s*在目录里面搜索以s开头的文件
+      find / -amin -10在系统中搜索最后１０分钟访问的文件
+      find / -atime -2查找在系统中最后４８小时访问的文件
+      find / -empty 查找在系统中为空的文件或者是文件夹
+      find / -group groupname 查找在系统中属于groupname的文件
+      find / -mmin -5查找在系统中最后５分钟修改过的文件
+      find / -mtime -1查找在系统中最后２４小时修改过的文件
+      find /－nouser查找在系统中属于费用户的文件
+      find / -user username 查找在系统中属于username的文件
+      find / -ctime -1查找在系统中最后２４小时被改变状态的文件
+      find / -fstype type查找在系统中文件类型为？的文件
+      find / -user user１name -or -user
+      user２name查找在系统中属于user1name或着属于user2name的文件
+      find / -user user1name -and
+      -user2name在系统中查找既属于user1name又属于user2name用户的文件
     which command        //find this command absolute path 
     grep [option] file  //the specific contents specifid file search"grep'printf'/user/include -R
     cw -c -w -l             //  statistical file bytes/words/lines number
@@ -36,15 +55,15 @@
     sudo !!              // example input: "$apt-get install ggg" ,(it absence 'sudo')   then input "$sudo !!"  
                             '$sudo !!' = $sudo apt-get ingstall ggg
     ^ggg^tig^           // 'tig' replecment 'ggg'     
-    ps                 //check process
-    ps a              //check terminal process including other process
-    ps u             //show process owner
-    ps x            //showed no ctronal terminal process
-    ps aux |grep "() "        // is a u x combining 
-    jobs          //display shell are runing what process
-    kill (PID)    //kill receptionist process
-    kill -9 (PID)  // force kill    ditto "$kill -SIGKILL (PID)"
-    fg (PID)              //the backstage process or hung up process into receptionist process
+    ps                  //check process
+    ps a                 //check terminal process including other process
+    ps u                   //show process owner
+    ps x                     //showed no ctronal terminal process
+    ps aux |grep "() "       // is a u x combining 
+    jobs                    //display shell are runing what process
+    kill (PID)             //kill receptionist process
+    kill -9 (PID)         // force kill    ditto "$kill -SIGKILL (PID)"
+    fg (PID)             //the backstage process or hung up process into receptionist process
     bg (PID)                  //make hung up process into backstage execution    '$fg %2895'
     $tar zcf dir1.tar.gz dir1   // put dir1 pack dir1.tar.gz
     $tar tvf dir1.tar.gz            // see package content
@@ -72,10 +91,11 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Git
 
-## collaction method git script
-###   file '.gitconefig' is git script .how to configoration git script file
-       |$ touch .gitconfib                        |
-       |$ vim .gitconfig                          |
+## .gitconefig
+###   collaction method git script
+###     file '.gitconefig' is git script .how to configoration git script file
+       |$ touch .gitconfib                       |
+       |$ vim .gitconfig                         |
        |  [core]                                 |
        |         neditor = vim                   |
        |  [alias]                                |
@@ -85,6 +105,12 @@
        |  [user]                                 |                    
        |          name = wuliao                  |
        |       email = guoming2199@126.com       |
+
+    -----------------------------------------------------------------------       
+## .gitignore
+###     cancellation git add files
+          $vim .gitignore
+`          write filename in the `.gitignore` file
 
 ----------------------------------------------------------------------------
 ## Github
