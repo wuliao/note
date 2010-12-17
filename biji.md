@@ -1,6 +1,14 @@
 
 # LINUX Ubuntu COMMAND 
 
+
+## In zhe path in symbolic meaning
+    ~          //the current user of your own home
+    .          //the current path
+    ..         //path above
+    /          // root
+    ~username   // the current user path under dir
+------------------------------------------------------------------------------------------------------
 ## commonly  used command in bash under 
     sudo apt-get install package
     sudo apt-get update
@@ -48,8 +56,7 @@
       user２name查找在系统中属于user1name或着属于user2name的文件
       find / -user user1name -and
       -user2name在系统中查找既属于user1name又属于user2name用户的文件
-  more detailed find command <http://ycyk168.javaeye.com/blog/514575>
-
+      more detailed find command <http://ycyk168.javaeye.com/blog/514575>
     which command        //find this command absolute path 
     grep [option] file  //the specific contents specifid file search"grep'printf'/user/include -R
     cw -c -w -l             //  statistical file bytes/words/lines number
@@ -62,8 +69,8 @@
     ps u                   //show process owner
     ps x                     //showed no ctronal terminal process
     ps aux |grep "() "       // is a u x combining 
-    jobs                    //display shell are runing what process
-    kill (PID)             //kill receptionist process
+    #jobs                    //display shell are runing what process
+kill (PID)             //kill recep"tionist process
     kill -9 (PID)         // force kill    ditto "$kill -SIGKILL (PID)"
     fg (PID)             //the backstage process or hung up process into receptionist process
     bg (PID)                  //make hung up process into backstage execution    '$fg %2895'
@@ -241,7 +248,19 @@
               q(quit)        // quit GDB 
 
 
+------------------------------------------------------------------------------------------------------------------------
+## vim of plug-in
+  
+###    ctags     ; with the file of the plugei
+###          Tlist    ; use for navigation in the code class 、variabile and the function name but use it must use ctags maketags file
+                       
+           $ctags -R *    // -R :recarsion subdirectories , * :all dir
+             tlist        //in vim on nosert write tlist , it will appear taglist famework
 
+###    NERDTree Toggle   ;Navigation and open file (show the current file and with it)
+
+###  OmniComplete     ;complement code
+                    
 
 
 
@@ -255,4 +274,4 @@
      &             //taking the address symbole
      
 
-
+ 
