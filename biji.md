@@ -77,8 +77,11 @@ kill (PID)             //kill recep"tionist process
     $tar zcf dir1.tar.gz dir1   // put dir1 pack dir1.tar.gz
     $tar tvf dir1.tar.gz            // see package content
     $tar zxf dir1.tar.gz       // unpack
-    ctrl +r           //find history command 
-    
+    ctrl +r                     //find history command 
+    dpkg -l                     //check system installitions packages
+    dpkg -L packagenames        //check installitions packages have many files
+    deinstall                   // unistall packages
+    ldd                         //
 ------------------------------------------------------------------------------
 ##   make command easy
       example: " markdown biji.md > biji.html"  change mmm 
