@@ -44,7 +44,7 @@ class_t * sort(class_t * head) /*排序函数*/
 {
     int i;
     class_t *p1,*stu,*p2,*p0=NULL;
-    printf("\nSorting...");
+    printf("\n  Sorting...  \n\n");
     if(!head || !head->next)    /*没有结点或只有一个结点，直接退出。*/
     return head;
     if(!head->next->next) /*有两个结点，交换两个结点后退出。*/
@@ -97,8 +97,10 @@ void MyPrint(class_t *p)
     }
 }
 
-class_t *insertnote(int n, class_t *head)
+class_t *insertnote( class_t *head)
 {
+    int n;
+    scanf("d",&n);
     class_t *p = head, *q;
     if(p -> id == n)
     {  
@@ -107,33 +109,108 @@ class_t *insertnote(int n, class_t *head)
     return p;
 }
 
-class_t *DelateNote(class_t *p,int n)
+class_t *DelateNote_id(class_t *p)
 {
+    int n;
+    class_t *store = p ,*q;
+    
+    printf("you want delate id number\n");
+    scanf("%d",&n);
+    
     if(p -> id == n)
     {
-        p = p -> next;
-        return p;
+        store = p->next;
+        p ->next = NULL;
+        free(p);p=NULL;
+        return store;
     }
-    if(p ->next -> id == n)
+    else
     {
-        p -> next = p ->next ->next;
-        return p;
+        while(p->next != NULL && p->next->id != n)
+        p = p->next;
+        if(p->next == NULL)
+        {
+            printf("input error\n");
+        }
+        else
+        {
+              q= p->next ;
+              p->next = q->next;
+              q->next = NULL;
+              free(q);q=NULL;
+        }
+        return store;
     }
-    if(p -> next ->next ==  NULL)
-    {
-        p -> next == NULL;
-        return  p;
-    }
+
+
 }
 
 
+class_t * DelateNote_name(class_t *p)
+{
+    class_t *store = p,*q;
+    char name[20];
+    printf("\n------------you want delate student name----------\n\n");
+    scanf("%s",name);
+    if(strcmp(p->name,name) == 0)
+    {
+        store = p->next;
+        p->next = NULL;
+        free(p); p=NULL;
+        return store;
+    }
+    else
+    {
+        while(p->next !=NULL && (strcmp(p->next->name,name) != 0))
+        p = p->next;
+        if(p->next == NULL)
+        {
+            printf("\n");
+            printf("\n---------input error,no have this class messages-----------\n\n");
+            printf("-----------this is all class note message\n\n");
+        }
+        else
+        {
+            q = p->next;
+            p->next = q->next;
+            q->next = NULL;
+            free(q); q = NULL;
+        }
+        
+             return store;
+    }
+
+}
 int main(int argc, const char *argv[])
 {
+    int number;
     class_t * p;
     p = CreatLink();
-    p = insertnote(7,p);
-    MyPrint(p);
-    p = sort(p);
-    MyPrint(p);
+    printf("\n-------------input number '1' is show classnote-------------\n");
+    printf("\n-------------input number '2' is insert class note----------\n");
+    printf("\n-------------input number '3' is Delate Note by id----------\n");
+    printf("\n-------------input number '4' is delate note by name--------\n");
+    scanf("%d",&number);
+    switch(number)
+    {
+           case 1 : 
+                    MyPrint(p);
+                    break;
+           case 2 : 
+                    p = insertnote(p);
+                    MyPrint(p);
+                    break;
+           case 3 : 
+                    p = DelateNote_id(p);
+                    MyPrint(p);
+                    break;
+           case 4 :
+                    p = DelateNote_name(p);
+                    MyPrint(p);
+                    break;
+           default :
+                    printf("\n----------input error-----\n");
+                    break;
+     }               
     return 0;
 }
