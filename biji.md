@@ -1,5 +1,4 @@
-
-# LINUX Ubuntu COMMAND 
+LINUX Ubuntu COMMAND 
 
 
 ## In zhe path in symbolic meaning
@@ -184,6 +183,7 @@ kill (PID)             //kill recep"tionist process
 # VIM
 
   
+        
      $vimdiff filename filename     //compare two the content of the document
 ------------------------------------------------------------------------------------------------------------------------ 
 ### collaction method makefile  
@@ -229,6 +229,7 @@ kill (PID)             //kill recep"tionist process
        :zx     ;opean flod contenat
        :zc     ;close 
        :shfit +j  ;mergin two line
+       split    //spilt screen such as "split main.c"
 
 -----------------------------------------------------------------------------------------------------------------------------  
 ##   Gcc
@@ -276,5 +277,18 @@ kill (PID)             //kill recep"tionist process
      i = *&i
      &             //taking the address symbole
      
+------------------------------------------------------------------------------------------------------------------------
 
+#  C++
+   sudo apt-get install build-essential      // install g++
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+#   VM
  
+### hwo to install VM tools
+    sudo perl vmware-instal.pl
+    cd mnt/hgfs/
